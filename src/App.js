@@ -8,7 +8,6 @@ export default class App extends Component {
     search: ""
   }
 
-
   fetchAlbums(e) {
     console.log(this)
     fetch(`https://itunes.apple.com/search?term=${this.state.search}&media=music&entity=album&attribute=artistTerm&limit=200`)
@@ -24,18 +23,14 @@ export default class App extends Component {
 
   render() {
     return (
-
-
       <div>
+        <p>Album searcher. Rough draft no CSS, basic functonality</p>
         <input onKeyPress={(e) => this.changeSearch(e)} className='search-bar'></input>
         <button onClick={() => this.fetchAlbums()} className='search-bar'>search</button>
 
         {this.state.albums.map((album) => (
           <Card album={album}></Card>
-          // <p key={album.id}>{album.collectionName}</p>
         ))}
-  
-        )}
 
       </div>
     )
