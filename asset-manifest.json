@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/reactClassAlbum/static/js/main.bbeaa496.js",
+    "main.css": "/reactClassAlbum/static/css/main.ba271143.css",
+    "main.js": "/reactClassAlbum/static/js/main.0249dc78.js",
     "index.html": "/reactClassAlbum/index.html",
-    "main.bbeaa496.js.map": "/reactClassAlbum/static/js/main.bbeaa496.js.map"
+    "main.ba271143.css.map": "/reactClassAlbum/static/css/main.ba271143.css.map",
+    "main.0249dc78.js.map": "/reactClassAlbum/static/js/main.0249dc78.js.map"
   },
   "entrypoints": [
-    "static/js/main.bbeaa496.js"
+    "static/css/main.ba271143.css",
+    "static/js/main.0249dc78.js"
   ]
 }
