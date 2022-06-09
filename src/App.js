@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Card from './Card'
-
+import "./App.css"
 export default class App extends Component {
 
   state = {
@@ -23,16 +23,18 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <p>Album searcher. Rough draft no CSS, basic functonality</p>
+      <main>
+        <p>Album searcher. Rough draft basic  CSS, basic functonality</p>
         <input onKeyPress={(e) => this.changeSearch(e)} className='search-bar'></input>
         <button onClick={() => this.fetchAlbums()} className='search-bar'>search</button>
 
-        {this.state.albums.map((album) => (
-          <Card album={album}></Card>
-        ))}
+        <section>
+          {this.state.albums.map((album) => (
+            <Card album={album}></Card>
+          ))}
 
-      </div>
+        </section>
+      </main>
     )
   }
 }

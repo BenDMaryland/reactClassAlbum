@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-
+import "./card.css"
 export default class Card extends Component {
     constructor(props) {
         super(props);
@@ -16,9 +16,9 @@ export default class Card extends Component {
     render() {
         console.log(this.state)
         return (
-            <div>
+            <div className='card'>
                 <p>{this.state.collectionName}</p>
-                <img src={this.state.artworkUrl100} alt="Girl in a jacket" width="100" height="100"></img>
+                <img src={this.state.artworkUrl100} alt="Girl in a jacket" ></img>
                 <p>{this.state.artistName}</p>
                 <p>{this.state.collectionPrice}</p>
 
