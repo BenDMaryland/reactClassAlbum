@@ -1,19 +1,26 @@
-import PropTypes from 'prop-types'
+
 import React, { Component } from 'react'
 
 export default class Card extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            collectionName: this.props.album.collectionName,
+            artworkUrl100: this.props.album.artworkUrl100,
+            artistName: this.props.album.artistName,
+            collectionPrice: this.props.album.collectionPrice
+        }
     }
 
     render() {
-        console.log(this.props.album)
+        console.log(this.state)
         return (
             <div>
-                <p>{this.props.album.collectionName}</p>
-                <img src={this.props.album.artworkUrl100} alt="Girl in a jacket" width="100" height="100"></img>
-                <p>{this.props.album.artistName}</p>
-                <p>{this.props.album.collectionPrice}</p>
+                <p>{this.state.collectionName}</p>
+                <img src={this.state.artworkUrl100} alt="Girl in a jacket" width="100" height="100"></img>
+                <p>{this.state.artistName}</p>
+                <p>{this.state.collectionPrice}</p>
 
             </div>
         )

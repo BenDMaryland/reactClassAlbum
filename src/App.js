@@ -9,7 +9,7 @@ export default class App extends Component {
   }
 
   fetchAlbums(e) {
-    console.log(this)
+
     fetch(`https://itunes.apple.com/search?term=${this.state.search}&media=music&entity=album&attribute=artistTerm&limit=200`)
       .then(r => r.json())
       .then(albumsList =>
