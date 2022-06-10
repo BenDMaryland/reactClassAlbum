@@ -5,15 +5,24 @@ export default class App extends Component {
 
   state = {
     albums: [],
-    search: ""
+    search: "",
+    showLoading: false,
+    loaded: false
   }
 
   fetchAlbums(e) {
+    this.setState(prevState => ({
+      showLoading: true
+    }));
 
     fetch(`https://itunes.apple.com/search?term=${this.state.search}&media=music&entity=album&attribute=artistTerm&limit=200`)
       .then(r => r.json())
       .then(albumsList =>
-        this.setState({ albums: albumsList.results }))
+        this.setState({
+          loaded: true,
+          showLoading: false,
+          albums: albumsList.results
+        }))
   }
 
   changeSearch(e) {
@@ -21,20 +30,27 @@ export default class App extends Component {
     if (e.key === "Enter") { this.fetchAlbums() }
   }
 
+
+  
+
   render() {
     return (
-      <main>
-        <p>Album searcher. Rough draft basic  CSS, basic functonality</p>
-        <input onKeyPress={(e) => this.changeSearch(e)} className='search-bar'></input>
-        <button onClick={() => this.fetchAlbums()} className='search-bar'>search</button>
+      <div>
+
+        <header>
+          <p>Album searcher. Rough draft basic  CSS, basic functonality</p>
+          <input onKeyPress={(e) => this.changeSearch(e)} className='search-bar'></input>
+          <button onClick={() => this.fetchAlbums()} className='search-bar'>search</button>
+          {this.state.showLoading ? <img id='loading-img' src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="loading-gif" /> : <></>}
+          {this.state.loaded ? <p>{this.state.albums.length} results</p> : <></>}
+        </header>
 
         <section>
           {this.state.albums.map((album) => (
-            <Card album={album}></Card>
+            <Card key={album.collectionId} album={album}></Card>
           ))}
-
         </section>
-      </main>
+      </div>
     )
   }
 }

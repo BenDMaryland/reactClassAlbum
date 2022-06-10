@@ -1,5 +1,21 @@
-section{
-        display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            max-height: 80vh;
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    max-height: 80vh;
+    margin-top: 13vh;
+}
+
+header {
+    margin-top: .5rem;
+    top: 0;
+    width: 100vw;
+    width: 90%;
+    text-align: center;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, 0);
+    max-height: 13vh;
+    background: white;
+    z-index: 99;
+    overflow: hidden;
 }

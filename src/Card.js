@@ -4,7 +4,6 @@ import "./card.css"
 export default class Card extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             collectionName: this.props.album.collectionName,
             artworkUrl100: this.props.album.artworkUrl100,
@@ -14,7 +13,6 @@ export default class Card extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className='card'>
                 <p>{this.state.collectionName}</p>
@@ -26,7 +24,7 @@ export default class Card extends Component {
         )
     }
 }
-let objexm = {
+let objExm = {
     "wrapperType": "collection",
     "collectionType": "Album",
     "artistId": 485571263,
