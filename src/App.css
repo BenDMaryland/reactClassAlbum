@@ -1,15 +1,21 @@
 section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+}
+main{
     max-height: 80vh;
-    margin-top: 13vh;
+        margin-top: 13vh;
+
 }
 
 header {
     margin-top: .5rem;
     top: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
     width: 100vw;
-    width: 90%;
+    width: 50%;
     text-align: center;
     left: 50%;
     position: fixed;
@@ -17,9 +23,12 @@ header {
     max-height: 13vh;
     background: white;
     z-index: 99;
-    overflow: hidden;
+    border: solid 1px #00b4cc;
 }
-
+header p{
+    margin: 2px;
+    padding: 2px;
+}
 #show-more{
 
 margin-left: 45%;

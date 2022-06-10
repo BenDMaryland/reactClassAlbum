@@ -39,19 +39,21 @@ export default class App extends Component {
       <div>
 
         <header>
-          <p>Album searcher. Rough draft basic  CSS, basic functonality</p>
+          <p>Album searcher.</p>
           <input onKeyPress={(e) => this.changeSearch(e)} className='search-bar'></input>
           <button onClick={() => this.fetchAlbums()} className='search-bar'>search</button>
           {this.state.showLoading ? <img id='loading-img' src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="loading-gif" /> : <></>}
           {this.state.loaded ? <p>{this.state.albums.length} results</p> : <></>}
         </header>
-        <section>
-          {this.state.albums.map((album, index) => {
-            if (this.state.albumsToShow > index) return (
-              <Card key={album.collectionId} album={album}></Card>)
-          })}
-        </section>
-        {this.state.loaded ? <button id="show-more" onClick={()=>this.setState(prevState=>({albumsToShow:prevState.albumsToShow+5}))  }                 >show more</button> : <></>}
+        <main>
+          <section>
+            {this.state.albums.map((album, index) => {
+              if (this.state.albumsToShow > index) return (
+                <Card key={album.collectionId} album={album}></Card>)
+            })}
+          </section>
+          {this.state.loaded ? <button id="show-more" onClick={() => this.setState(prevState => ({ albumsToShow: prevState.albumsToShow + 5 }))}                 >show more</button> : <></>}
+        </main>
       </div>
     )
   }
